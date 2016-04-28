@@ -8,7 +8,24 @@
 }
 
 .title {
+  color: #4a90e2;
   font-weight: 100;
   font-size: 100px;
   margin-bottom: 20px;
+}
+
+.header {
+  color: #4a90e2;
+  font-size: 35px;
+  text-align: center;
+  line-height: 55px;
+  font-weight: 100;
+}
+
+.subHeader {
+  color: #4a90e2;
+  font-size: 35px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: 100;
 }
