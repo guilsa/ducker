@@ -12,7 +12,7 @@ const MainContainer = React.createClass({
         </div>
       </div>
     )
-  }
+  },
 })
 
 export default MainContainer
