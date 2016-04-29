@@ -1,31 +1,12 @@
-/* Example CSS */
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  composes: centeredContainer from 'sharedStyles/styles.css';
 }
 
 .title {
-  color: #4a90e2;
-  font-weight: 100;
-  font-size: 100px;
-  margin-bottom: 20px;
+  composes: largeHeader from 'sharedStyles/styles.css';
 }
 
-.header {
-  color: #4a90e2;
-  font-size: 35px;
-  text-align: center;
-  line-height: 55px;
-  font-weight: 100;
-}
-
-.subHeader {
-  color: #4a90e2;
-  font-size: 35px;
-  text-align: center;
-  line-height: 20px;
-  font-weight: 100;
+.slogan {
+  composes: subHeader from 'sharedStyles/styles.css';
 }
