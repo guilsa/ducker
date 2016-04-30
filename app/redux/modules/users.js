@@ -4,7 +4,7 @@ const FETCHING_USER = 'FETCHING_USER'
 const FETCHING_USER_FAILURE = 'FETCHING_USER_FAILURE'
 const FETCHING_USER_SUCCESS = 'FETCHING_USER_SUCCESS'
 
-export function authUser (uid) {
+function authUser (uid) {
   return {
     type: AUTH_USER,
     uid,
@@ -17,13 +17,13 @@ function unauthUser () {
   }
 }
 
-export function fetchingUser () {
+function fetchingUser () {
   return {
     type: FETCHING_USER,
   }
 }
 
-export function fetchingUserFailure (error) {
+function fetchingUserFailure (error) {
   console.warn(error)
   return {
     type: FETCHING_USER_FAILURE,
@@ -31,7 +31,7 @@ export function fetchingUserFailure (error) {
   }
 }
 
-export function fetchingUserSuccess (uid, user, timestamp) {
+function fetchingUserSuccess (uid, user, timestamp) {
   return {
     type: FETCHING_USER_SUCCESS,
     uid,
@@ -49,7 +49,7 @@ const initialUserState = {
   },
 }
 
-export default function user (state = initialUserState, action) {
+function user (state = initialUserState, action) {
   switch (action.type) {
     case FETCHING_USER_SUCCESS :
       return {
@@ -69,7 +69,7 @@ const initialState = {
   authedId: '',
 }
 
-export default function users (state = initialState, action) {
+function users (state = initialState, action) {
   switch (action.type) {
     case AUTH_USER :
       return {
