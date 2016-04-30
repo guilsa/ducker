@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import { Authenticate } from 'components'
 import auth from 'helpers/auth'
 import { connect } from 'react-redux'
+import * as userActionCreators from 'redux/modules/users'
 
 const AuthenticateContainer = React.createClass({
   propTypes: {
