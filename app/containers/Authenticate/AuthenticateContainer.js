@@ -10,12 +10,18 @@ const AuthenticateContainer = React.createClass({
     error: PropTypes.string.isRequired,
   },
   handleAuth () {
+    console.log(user);
+    this.props.dispatch(userActionCreators.fetchingUser())
     auth().then((user) => {
-      console.log('Auth User', user)
+      // Remember!
+      // Always wrap action creators invocations in dispatch
+      this.props.dispatch.userActionCreators.fetchingUserSuccess(user.uid, user, Date.now())
+      this.props.dispatch.userActionCreators.authUser(user.uid)
     })
+    .catch((error) => this.props.dispatch(userActionCreators.fetchingUserFailure(error)))
   },
   render () {
-    console.log(this.props)
+    console.log(this.props.isFetching)
     return (
       <Authenticate
         isFetching={this.props.isFetching}
@@ -26,6 +32,7 @@ const AuthenticateContainer = React.createClass({
 })
 
 function mapStateToProps (state) {
+  console.log('STATE', state);
   return {
     isFetching: state.isFetching,
     error: state.error,
