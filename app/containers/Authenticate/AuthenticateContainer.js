@@ -43,10 +43,18 @@ function mapStateToProps (state) {
   }
 }
 
+// Argument `dispatch` is needed in order to be able to
+// dispatch a specific action to your reducer functions.
 function mapDispatchToProps (dispatch) {
+  // bindActionCreators
+  // Turns an object whose alues are action creators
+  // into an object with the same keys, but with every
+  // action creator wrapped into a dispatch call
+  // so they may be invoked directly.
   return bindActionCreators(userActionCreators, dispatch)
 }
 
+// Passes in "dispatch" as a prop to component
 export default connect(
   mapStateToProps, // which part of the state the component needs
   mapDispatchToProps // helper for binding a specific dispatch with an object with action creators
