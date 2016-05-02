@@ -1,9 +1,11 @@
 import React from 'react'
 import { Navigation } from 'components'
+import { connect } from 'react-redux'
 import { container, innerContainer } from './styles.css'
 
 const MainContainer = React.createClass({
   render () {
+    // console.log('props', this.props);
     return (
       <div className={container}>
         <Navigation isAuthed={false}/>
@@ -15,4 +17,12 @@ const MainContainer = React.createClass({
   },
 })
 
-export default MainContainer
+// function mapStateToProps (state) {
+//   return {
+//     isAuthed: state.isAuthed,
+//   }
+// }
+
+export default connect(
+  (state) => ({isAuthed: state.isAuthed})
+)(MainContainer)

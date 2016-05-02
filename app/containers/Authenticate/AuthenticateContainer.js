@@ -16,7 +16,7 @@ const AuthenticateContainer = React.createClass({
     this.props.fetchAndHandleAuthedUser()
   },
   render () {
-    console.log(this.props.isFetching)
+    // console.log(this.props.isFetching)
     return (
       <Authenticate
         isFetching={this.props.isFetching}
@@ -28,6 +28,7 @@ const AuthenticateContainer = React.createClass({
 
 function mapStateToProps (state) {
   console.log('STATE', state);
+  console.log('userActionCreators', userActionCreators);
   return {
     isFetching: state.isFetching,
     error: state.error,
@@ -38,7 +39,7 @@ function mapStateToProps (state) {
 // dispatch a specific action to your reducer functions.
 function mapDispatchToProps (dispatch) {
   // bindActionCreators
-  // Turns an object whose alues are action creators
+  // Turns an object whose values are action creators
   // into an object with the same keys, but with every
   // action creator wrapped into a dispatch call
   // so they may be invoked directly.
