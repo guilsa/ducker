@@ -1,5 +1,4 @@
-import auth from 'helpers/auth'
-
+import auth, { logout } from 'helpers/auth'
 const AUTH_USER = 'AUTH_USER'
 const UNAUTH_USER = 'UNAUTH_USER'
 const FETCHING_USER = 'FETCHING_USER'
@@ -42,7 +41,7 @@ function fetchingUserSuccess (uid, user, timestamp) {
   }
 }
 
-export function fetchAndHandleAuthedUser(){
+export function fetchAndHandleAuthedUser () {
   return function (dispatch) {
     dispatch(fetchingUser())
     return auth().then((user) => {
@@ -50,6 +49,14 @@ export function fetchAndHandleAuthedUser(){
       dispatch(authUser(user.uid))
     })
     .catch((error) => dispatch(fetchingUserFailure(error)))
+  }
+}
+
+// create a thunk, needs to return a function
+export function logoutAndUnauth () {
+  return function (dispatch) {
+    logout()
+    dispatch(unauthUser())
   }
 }
 

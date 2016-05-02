@@ -6,7 +6,7 @@ const FeedContainer = React.createClass({
     return (
       <Feed />
     )
-  }
+  },
 })
 
 export default FeedContainer
