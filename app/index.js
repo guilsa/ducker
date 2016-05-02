@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import users from 'redux/modules/users'
 import thunk from 'redux-thunk' // middleware between action <-> reducer
+import { checkifAuthed } from 'helpers/auth'
 
 // --- thunk
 // Receives `dispatch` in order to dispatch that an event
@@ -19,8 +20,18 @@ import thunk from 'redux-thunk' // middleware between action <-> reducer
 // argument.
 const store = createStore(users, applyMiddleware(thunk))
 
-function checkAuth() {
-  console.log(arguments);
+function checkAuth (nextState, replace) {
+  const isAuthed = checkifAuthed(store) // check firebase if we're authenticated
+  const nextPathName = nextState.location.pathname
+  if (nextPathName === '/' || nextPathName === '/auth') {
+    if (isAuthed === true) {
+      replace('/feed')
+    }
+  } else {
+    if (isAuthed !== true) {
+      replace('/auth')
+    }
+  }
 }
 
 //   --- Provider ---

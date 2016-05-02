@@ -7,3 +7,7 @@ export default function auth () {
     }), 2000)
   })
 }
+
+export function checkifAuthed (store) {
+  return store.getState().isAuthed
+}
