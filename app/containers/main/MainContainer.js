@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { Navigation } from 'components'
 import { connect } from 'react-redux'
 import { container, innerContainer } from './styles.css'
 
 const MainContainer = React.createClass({
+  propTypes: {
+    isAuthed: PropTypes.bool.isRequired,
+  },
   render () {
     // console.log('props', this.props);
     return (
