@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as userActionCreators from 'redux/modules/users'
 
-console.log(userActionCreators)
-
 const AuthenticateContainer = React.createClass({
   propTypes: {
     isFetching: PropTypes.bool.isRequired,
@@ -33,8 +31,8 @@ const AuthenticateContainer = React.createClass({
 })
 
 function mapStateToProps (state) {
-  console.log('STATE', state);
-  console.log('userActionCreators', userActionCreators);
+  // console.log('STATE', state);
+  // console.log('userActionCreators', userActionCreators);
   return {
     isFetching: state.isFetching,
     error: state.error,
