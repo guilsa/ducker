@@ -6,6 +6,11 @@ import { Provider } from 'react-redux'
 import users from 'redux/modules/users'
 import thunk from 'redux-thunk' // middleware between action <-> reducer
 
+// --- thunk
+// Receives `dispatch` in order to dispatch that an event
+// occurred and receives `getState` so you can grab something off
+// the current state or dispatch actions only under certain state conditions.
+
 // --- createStore ---
 // Receives a reducing function
 // that returns the next state tree
