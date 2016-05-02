@@ -8,7 +8,7 @@ const MainContainer = React.createClass({
     // console.log('props', this.props);
     return (
       <div className={container}>
-        <Navigation isAuthed={false}/>
+        <Navigation isAuthed={this.props.isAuthed}/>
         <div className={innerContainer}>
           {this.props.children}
         </div>
