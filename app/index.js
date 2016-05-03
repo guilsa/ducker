@@ -20,6 +20,9 @@ import { checkIfAuthed } from 'helpers/auth'
 // argument.
 const store = createStore(users, applyMiddleware(thunk))
 
+// nextState: is an object which contains
+// info on the route we're entering
+// replace: allows us to redirect to another route
 function checkAuth (nextState, replace) {
   const isAuthed = checkIfAuthed(store) // check firebase if we're authenticated
   const nextPathName = nextState.location.pathname
