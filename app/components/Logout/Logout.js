@@ -1,7 +1,8 @@
 import React from 'react'
+import { text } from './styles.css'
 
 export default function Logout (props) {
   return (
-    <div>Logout</div>
+    <div className={text}>{'You are not logged out'}</div>
   )
 }
