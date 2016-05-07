@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/guilsa/ducker#readme",
   "dependencies": {
+    "firebase": "^2.4.2",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-redux": "^4.4.5",
