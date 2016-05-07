@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import getRoutes from 'config/routes'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import users from 'redux/modules/users'
 import thunk from 'redux-thunk' // middleware between action <-> reducer
@@ -18,7 +18,10 @@ import { checkIfAuthed } from 'helpers/auth'
 // given the current state tree
 // and an action to handle as its first
 // argument.
-const store = createStore(users, applyMiddleware(thunk))
+const store = createStore(users, compose(
+  applyMiddleware(thunk),
+  window.devToolsExtension ? window.devToolsExtension() : (f) => f
+))
 
 // nextState: is an object which contains
 // info on the route we're entering
