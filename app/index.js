@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import getRoutes from 'config/routes'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
-import users from 'redux/modules/users'
 import thunk from 'redux-thunk' // middleware between action <-> reducer
 import { checkIfAuthed } from 'helpers/auth'
+import * as reducers from 'redux/modules'
 
 // --- thunk
 // Receives `dispatch` in order to dispatch that an event
