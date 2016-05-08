@@ -1,3 +1,21 @@
+{
+  type: OPEN_MODAL,
+}
+
+{
+  type: CLOSE_MODAL,
+}
+
+{
+  type: UPDATE_DUCK_TEXT,
+  newDuckText
+}
+
+const initialState = {
+  duckText: '',
+  isOpen: false,
+}
+
 export default function modal (state = initialState, action) {
   switch (action.type) {
     case OPEN_MODAL :
