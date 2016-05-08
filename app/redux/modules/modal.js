@@ -1,14 +1,20 @@
-{
-  type: OPEN_MODAL,
+function openModal () {
+  return {
+    type: OPEN_MODAL,
+  }
 }
 
-{
-  type: CLOSE_MODAL,
+function closeModal () {
+  return {
+    type: CLOSE_MODAL,
+  }
 }
 
-{
-  type: UPDATE_DUCK_TEXT,
-  newDuckText
+function updateDuckText () {
+  return {
+    type: UPDATE_DUCK_TEXT,
+    newDuckText
+  }
 }
 
 const initialState = {
