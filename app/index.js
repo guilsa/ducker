@@ -18,6 +18,22 @@ import * as reducers from 'redux/modules'
 // given the current state tree
 // and an action to handle as its first
 // argument.
+
+// --- combineReducers
+// When you use combineReducers, the resulting reducer
+// calls every child reducer and gathers their returned values
+// into a single state object. The new state of your app will be the
+// returned value of every reducer that was a key on the object
+// you passed to combineReducers.
+
+// ** Indepently manages state **: Allows you to split your reducing function
+// into seperate functions, each managing independent parts of the state.
+
+// Takes in one parameter which is an object who's values are different
+// reducing functions.
+
+// Since createStore needs a single reducer function, that's what
+// combineReducers creates.
 const store = createStore(combineReducers(reducers), compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : (f) => f
