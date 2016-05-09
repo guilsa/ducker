@@ -16,9 +16,17 @@ function saveToDucks (duck) {
   }
 }
 
-function saveToUsersDucks (duck, duckId) {}
+function saveToUsersDucks (duck, duckId) {
+  return { ref.child(`usersDucks/${duck.uid}/${duckId}`)
+    .set({...duck, duckId})
+  }
+}
 
-function saveLikeCount (duckId) {}
+function saveLikeCount (duckId) {
+  return { ref.child(`likeCount/${duckId}`).set(0)
+    .set({...duck, duckId})
+  }
+}
 
 function saveDuck (duck) {
   const { duckId, duckPromise } = saveToDucks(duck)
