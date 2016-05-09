@@ -2,19 +2,19 @@ const OPEN_MODAL = 'OPEN_MODAL'
 const CLOSE_MODAL = 'CLOSE_MODAL'
 const UPDATE_DUCK_TEXT = 'UPDATE_DUCK_TEXT'
 
-function openModal () {
+export function openModal () {
   return {
     type: OPEN_MODAL,
   }
 }
 
-function closeModal () {
+export function closeModal () {
   return {
     type: CLOSE_MODAL,
   }
 }
 
-function updateDuckText () {
+export function updateDuckText () {
   return {
     type: UPDATE_DUCK_TEXT,
     newDuckText
