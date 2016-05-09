@@ -1,27 +1,39 @@
-{
-  type: FECTHING_DUCK,  
+function fetchingDuck () {
+  return {
+    type: FECTHING_DUCK,
+  }
 }
 
-{
-  type: FETCHING_DUCK_ERROR,
-  error: 'Error fetching Duck',
+function fetchingDuckError (error) {
+  return {
+    type: FETCHING_DUCK_ERROR,
+    error: 'Error fetching Duck',
+  }
 }
 
-{
-  type: FETCHING_DUCK_SUCCESS,
-  duck,
+function fetchingDuckSuccess (duck) {
+  return {
+    type: FETCHING_DUCK_SUCCESS,
+    duck,
+  }
 }
 
-{
-  type: REMOVE_FETCHING,
+function removeFetching () {
+  return {
+    type: REMOVE_FETCHING,
+  }
 }
 
-{
-  type: ADD_DUCK,
-  duck,
+function addDuck (duck) {
+  return {
+    type: ADD_DUCK,
+    duck,
+  }
 }
 
-{
-  type: ADD_MULTIPLE_DUCKS,
-  ducks,
+function addMultipleDucks (ducks) {
+  return {
+    type: ADD_MULTIPLE_DUCKS,
+    ducks,
+  }
 }
