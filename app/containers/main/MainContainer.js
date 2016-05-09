@@ -27,5 +27,5 @@ const MainContainer = React.createClass({
 // }
 
 export default connect(
-  (state) => ({isAuthed: state.isAuthed})
+  ({users}) => ({isAuthed: users.isAuthed})
 )(MainContainer)
