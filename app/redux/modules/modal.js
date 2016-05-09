@@ -14,7 +14,7 @@ export function closeModal () {
   }
 }
 
-export function updateDuckText () {
+export function updateDuckText (newDuckText) {
   return {
     type: UPDATE_DUCK_TEXT,
     newDuckText

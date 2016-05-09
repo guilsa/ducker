@@ -11,7 +11,7 @@ export function checkIfAuthed (store) {
   if (authData === null) {
     return false
   } else if (store.getState().users.isAuthed === false) {
-    const { uid, facebook } = authData
+    const { facebook, uid } = authData
     const userInfo = formatUserInfo(facebook.displayName, facebook.profileImageURL, uid)
     store.dispatch(authUser(uid))
     store.dispatch(fetchingUserSuccess(uid, userInfo, Date.now()))
@@ -24,7 +24,6 @@ export function logout () {
 }
 
 export function saveUser (user) {
-  console.log(user);
   return ref.child(`users/${user.uid}`)
     .set(user)
     .then(() => user)
