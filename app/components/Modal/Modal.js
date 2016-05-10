@@ -24,6 +24,7 @@ Modal.PropTypes = {
   openModal: func.isRequired,
   closeModal: func.isRequired,
   updateDuckText: func.isRequired,
+  duckFanout: func.isRequired,
 }
 
 export default function Modal (props) {
