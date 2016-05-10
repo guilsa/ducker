@@ -50,7 +50,7 @@ const initialState = {
   error: '',
 }
 
-function ducks (state = initialState, action) {
+export default function ducks (state, action) {
   switch (action.type) {
     case FETCHING_DUCK :
       return {

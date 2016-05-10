@@ -47,7 +47,7 @@ const initialState = {
   duckIds: [],
 }
 
-function feed (state = initialState, action) {
+export default function feed (state = initialState, action) {
   switch (action.type) {
     case SETTING_FEED_LISTENER :
       return {

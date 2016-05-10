@@ -47,7 +47,7 @@ const initialUsersDuckState = {
   duckIds: [],
 }
 
-function usersDuck (state = initialUsersDuckState, action) {
+export default function usersDuck (state = initialUsersDuckState, action) {
   switch (action.type) {
     case ADD_SINGLE_USERS_DUCK :
       return {
