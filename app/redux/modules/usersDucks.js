@@ -3,7 +3,7 @@ const FETCHING_USERS_DUCKS_ERROR = 'FETCHING_USERS_DUCKS_ERROR'
 const FETCHING_USERS_DUCKS_SUCCESS = 'FETCHING_USERS_DUCKS_SUCCESS'
 const ADD_SINGLE_USERS_DUCK = 'ADD_SINGLE_USERS_DUCK'
 
-function addSingleUsersDuck (uid, duckId) {
+export function addSingleUsersDuck (uid, duckId) {
   return {
     type: 'ADD_SINGLE_USERS_DUCK',
     uid,
