@@ -15,7 +15,7 @@ function mapStateToProps ({modal, users}) {
 }
 
 function mapDispatchToProps (dispatch) {
-  return bindActionCreators(modalActionCreators, dispatch)
+  return bindActionCreators({...modalActionCreators, ...ducksActionCreators}, dispatch)
 }
 
 export default connect(
