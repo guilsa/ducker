@@ -17,18 +17,15 @@ function saveToDucks (duck) {
 }
 
 function saveToUsersDucks (duck, duckId) {
-  return { ref.child(`usersDucks/${duck.uid}/${duckId}`)
+  return ref.child(`usersDucks/${duck.uid}/${duckId}`)
     .set({...duck, duckId})
-  }
 }
 
 function saveLikeCount (duckId) {
-  return { ref.child(`likeCount/${duckId}`).set(0)
-    .set({...duck, duckId})
-  }
+  return ref.child(`likeCount/${duckId}`).set(0)
 }
 
-function saveDuck (duck) {
+export function saveDuck (duck) {
   const { duckId, duckPromise } = saveToDucks(duck)
 
   return Promise.all([
