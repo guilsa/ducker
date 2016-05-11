@@ -34,3 +34,15 @@ export function saveDuck (duck) {
     saveLikeCount(duckId),
   ]).then(() => ({...duck, duckId}))
 }
+
+// can't be a promise, needs to be a listener
+// therefore we're setting up cb and errorCB
+export function listenToFeed (cb, errorCB) {
+  ref.child('ducks').on('value', (snapshot) => {
+    const feed = snapshot.val() || {}
+    const sortedIds = Object.keys(feed).sort((a, b) => {
+      return feed[b].timestamp - feed[a].timestamp
+    })
+    cb({feed, sortedIds})
+  }, errorCB )
+}
